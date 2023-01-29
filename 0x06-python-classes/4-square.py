@@ -28,6 +28,8 @@ class Square:
     def size(self):
         """
         size getter. Handle size errors
+        """
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -39,3 +41,15 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
+
+    def my_print(self):
+        """
+        Print a square with the character #
+        """
+        if self.__size == 0:
+            print()
+        else:
+            for row in range(self.__size):
+                for column in range(self.__size):
+                    print("#", end="")
+                print()
