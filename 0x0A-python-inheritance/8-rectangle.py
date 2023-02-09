@@ -1,37 +1,19 @@
 #!/usr/bin/python3
-"""
-This is module 8-rectangle
-
-This module contains:
--one class
--two functions
-"""
-
-
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
+"""
+Rectangle class module.
+
+Define Rectangle class.
+"""
+
+
 class Rectangle(BaseGeometry):
-    """
-    inherits class from BaseGeometry (7-base_geometry)
-
-    Instantiation with width and height:
-    def __init__(self, width, height):
-    width and height must be private. No getter or setter
-    width and height must be positive integers, validated by integer_validator
-
-    Args:
-    width
-    height
-    Returns:
-    area of shape
-    """
+    """Define a Rectangle."""
 
     def __init__(self, width, height):
-        """
-        init
-        """
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
         self.__width = width
         self.__height = height
-        BaseGeometry.integer_validator(self, "width", self.__width)
-        BaseGeometry.integer_validator(self, "height", self.__height)
